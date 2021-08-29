@@ -15,7 +15,7 @@ jobs:
       run: |
         git clone -b lab-page https://github.com/thun888/lab.git
         curl https://image.thum.io/get/width/1024/crop/768/https://blog.thun888.xyz/ -o blog.thun888.xyz.jpg  
-        mv blog.thun888.xyz.jpg /lab/`date +%Y_%m_%d_%H:%M:%S`.jpg
+        mv blog.thun888.xyz.jpg ./lab/`date +%Y_%m_%d_%H:%M:%S`.jpg
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
