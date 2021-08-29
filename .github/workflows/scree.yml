@@ -1,0 +1,22 @@
+name: get
+on: 
+  schedule:
+    - cron: '0/30 0/15 * * * ?'
+  push:
+    branches: 
+      - main
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download
+      run: |
+        curl https://image.thum.io/get/width/1024/crop/768/https://blog.thun888.xyz/ -o blog.thun888.xyz.jpg  
+        mv blog.thun888.xyz.jpg `date +%Y_%m_%d_%H:%M:%S`.txt
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+        with:
+          BRANCH: lab-page                                          # 你要发布到哪个分支（GitHub Pages的仓库分支，不是你hugo代码的分支）
+          FOLDER: ./                                        # 发布的文件夹，默认就是public
