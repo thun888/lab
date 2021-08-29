@@ -16,6 +16,8 @@ jobs:
         git clone -b lab-page https://github.com/thun888/lab.git
         cd lab
         ls
+        rm -rf .git/
+        rm -rf lab/
         curl https://image.thum.io/get/width/1024/crop/768/https://blog.thun888.xyz/ -o blog.thun888.xyz.jpg  
         mv blog.thun888.xyz.jpg `date +%Y_%m_%d_%H:%M:%S`.jpg
     - name: Deploy
