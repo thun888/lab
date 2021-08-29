@@ -15,6 +15,7 @@ jobs:
       run: |
         git clone -b lab-page https://github.com/thun888/lab.git
         rm -rf ./lab/.git/
+        rm -rf ./lab/.nojekyll
         curl https://image.thum.io/get/width/1024/crop/768/https://blog.thun888.xyz/ -o ./lab/blog.thun888.xyz.jpg  
         mv ./lab/blog.thun888.xyz.jpg ./lab/`date +%Y_%m_%d_%H:%M:%S`.jpg
     - name: Deploy
