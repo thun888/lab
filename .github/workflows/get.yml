@@ -11,16 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Download
+    - name: install GO
+      uses: actions/setup-go@v2.1.4
+      
+    - name: run it
       run: |
-        export TZ='Asia/Shanghai'
-        git clone -b lab-page https://github.com/thun888/lab.git
-        rm -rf ./lab/.git/
-        curl https://image.thum.io/get/width/1024/crop/768/https://blog.thun888.xyz/ -o ./lab/blog.thun888.xyz.jpg  
-        mv ./lab/blog.thun888.xyz.jpg ./lab/`date +%Y_%m_%d_%H:%M:%S`.jpg
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_branch: lab-page
-        publish_dir: ./lab
+        go run main.go
