@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  download:
+  dos:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +16,6 @@ jobs:
       
     - name: run it
       run: |
-        ls
+        git clone https://github.com/thun888/lab.git
+        cd lab
         go run main.go
