@@ -16,4 +16,5 @@ jobs:
       
     - name: run it
       run: |
+        ls
         go run main.go
