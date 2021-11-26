@@ -1,7 +1,7 @@
 name: get
 on: 
   schedule:
-    - cron: '0/10 * * * *'
+    - cron: '* 6 * * *'
   push:
     branches: 
       - main
