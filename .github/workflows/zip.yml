@@ -26,7 +26,9 @@ jobs:
         
     - name: Generate # 生成
       run: |
+        mkdir public
         cat main.css morecss.css notyf.min.css > ./public/allin.css
+        
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
